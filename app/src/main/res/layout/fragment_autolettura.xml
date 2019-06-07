@@ -6,17 +6,15 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout7"
+        android:id="@+id/InputLayoutCodice"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="413dp"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="Codice Utente"
         app:errorEnabled="true"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/InputLayoutNome"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -28,15 +26,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
+        android:id="@+id/InputLayoutNome"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nome Utente"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout8"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"
+        app:layout_constraintBottom_toTopOf="@+id/InputLayoutCognome"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutCodice"
         tools:layout_editor_absoluteX="-16dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -47,15 +45,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout8"
+        android:id="@+id/InputLayoutCognome"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Cognome Utente"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout9"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
+        app:layout_constraintBottom_toTopOf="@+id/InputLayoutValoreLettura"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutNome">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -66,27 +64,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout9"
+        android:id="@+id/InputLayoutValoreLettura"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Valore Lettura"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout10"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
+        app:layout_constraintBottom_toTopOf="@+id/InputLayoutDate"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutCognome">
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtValoreLettura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"/>
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout10"
+        android:id="@+id/InputLayoutDate"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -94,7 +92,7 @@
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/btnCaricaFoto"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutValoreLettura">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtDate"
@@ -124,19 +122,20 @@
         android:text="Carica"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtcarica"
-        app:layout_constraintTop_toTopOf="@+id/txtcarica"
+        app:layout_constraintStart_toEndOf="@+id/txtCarica"
+        app:layout_constraintTop_toTopOf="@+id/txtCarica"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txtcarica"
-        android:layout_width="202dp"
+        android:id="@+id/txtCarica"
+        android:layout_width="240dp"
         android:layout_height="46dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="84dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Scegli la foto del contatore"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

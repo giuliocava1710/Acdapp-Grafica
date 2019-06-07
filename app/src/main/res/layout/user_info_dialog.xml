@@ -2,88 +2,99 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:layout_editor_absoluteY="81dp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtNomeDialog"
+        android:id="@+id/InputLayoutDialogNome"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:ems="10"
         android:hint="Nome Utente"
-        app:layout_constraintBottom_toTopOf="@+id/txtCognomeDialog"
+        app:layout_constraintBottom_toTopOf="@+id/InputLayoutDialogCognome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lblNomeDIalog"
+            android:id="@+id/txtNomeDIalog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtCognomeDialog"
+        android:id="@+id/InputLayoutDialogCognome"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:ems="10"
         android:hint="Cognome Utente"
-        app:layout_constraintBottom_toTopOf="@+id/txtMailDialog"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeDialog">
+        app:layout_constraintBottom_toTopOf="@+id/InputLayoutDialogMail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutDialogNome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lblCognomeDialog"
+            android:id="@+id/txtCognomeDialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtMailDialog"
+        android:id="@+id/InputLayoutDialogMail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:ems="10"
         android:hint="Mail"
-        app:layout_constraintBottom_toTopOf="@+id/txtTelefonoDialog"
-        app:layout_constraintTop_toBottomOf="@+id/txtCognomeDialog">
+        app:layout_constraintBottom_toTopOf="@+id/InputLayoutDialogTelefono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutDialogCognome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lblMailDialog"
+            android:id="@+id/txtMailDialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtTelefonoDialog"
+        android:id="@+id/InputLayoutDialogTelefono"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:ems="10"
         android:hint="Telefono"
+        android:inputType="phone"
         app:layout_constraintBottom_toTopOf="@+id/btnConfermaDialog"
-        app:layout_constraintTop_toBottomOf="@+id/txtMailDialog">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutDialogMail">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lblTelefonoDialog"
+            android:id="@+id/txtTelefonoDialog"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:inputType="phone" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnConfermaDialog"
 
-
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="120dp"
         android:text="Conferma"
-        app:layout_constraintBottom_toTopOf="@+id/txtNomeDialog"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        style="@style/Widget.MaterialComponents.Button"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefonoDialog" />
+        app:layout_constraintTop_toBottomOf="@+id/InputLayoutDialogTelefono" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

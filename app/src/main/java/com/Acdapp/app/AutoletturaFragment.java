@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,7 +23,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,8 +38,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-
-import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 public class AutoletturaFragment extends Fragment {
 
@@ -81,7 +77,7 @@ public class AutoletturaFragment extends Fragment {
         cognomeUtente = (EditText) v.findViewById(R.id.txtCognomeUtente);
         valoreLettura = (EditText) v.findViewById(R.id.txtValoreLettura);
 
-        textInputLayout7 = (TextInputLayout) v.findViewById(R.id.textInputLayout7) ;
+        textInputLayout7 = (TextInputLayout) v.findViewById(R.id.InputLayoutCodice) ;
 
         user =  FirebaseAuth.getInstance().getCurrentUser();
 
