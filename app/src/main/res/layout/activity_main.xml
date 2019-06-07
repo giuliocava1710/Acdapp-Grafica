@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/lblValoreLettura"
+        android:layout_width="101dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="295dp"
+        android:text="Valore Lettura"
+        app:layout_constraintBottom_toTopOf="@+id/txtValoreLettura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCognomeUtente" />
+
+    <EditText
+        android:id="@+id/txtValoreLettura"
+        android:layout_width="214dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="181dp"
+        android:ems="10"
+        android:hint="Inserire valore lettura"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/lblData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblValoreLettura" />
+
+    <TextView
+        android:id="@+id/lblCodiceUtente"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="305dp"
+        android:text="Codice Utente"
+        app:layout_constraintBottom_toTopOf="@+id/txtCodiceUtente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtCodiceUtente"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="189dp"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="Inserire codice utente"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/lblNomeUtente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCodiceUtente" />
+
+    <TextView
+        android:id="@+id/lblNomeUtente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="313dp"
+        android:text="Nome Utente"
+        app:layout_constraintBottom_toTopOf="@+id/txtNomeUtente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodiceUtente" />
+
+    <EditText
+        android:id="@+id/txtNomeUtente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="189dp"
+        android:ems="10"
+        android:hint="Inserire nome Utente"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/lblCognomeUtente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNomeUtente" />
+
+    <TextView
+        android:id="@+id/lblCognomeUtente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="287dp"
+        android:text="Cognome Utente"
+        app:layout_constraintBottom_toTopOf="@+id/txtCognomeUtente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeUtente" />
+
+    <EditText
+        android:id="@+id/txtCognomeUtente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="189dp"
+        android:ems="10"
+        android:hint="Inserire cognome utente"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/lblValoreLettura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCognomeUtente" />
+
+    <EditText
+        android:id="@+id/Date"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="189dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/lblFoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblData" />
+
+    <TextView
+        android:id="@+id/lblData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="366dp"
+        android:text="Data"
+        app:layout_constraintBottom_toTopOf="@+id/Date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtValoreLettura" />
+
+    <TextView
+        android:id="@+id/lblFoto"
+        android:layout_width="185dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="176dp"
+        android:text="scegli foto contatore dalla galleria"
+        app:layout_constraintBottom_toTopOf="@+id/btnCaricaFoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Date" />
+
+    <Button
+        android:id="@+id/btnCaricaFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="281dp"
+        android:layout_marginEnd="42dp"
+        android:text="Carica"
+        app:layout_constraintBottom_toTopOf="@+id/btnInvia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblFoto" />
+
+    <Button
+        android:id="@+id/btnInvia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="161dp"
+        android:text="Invia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCaricaFoto" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

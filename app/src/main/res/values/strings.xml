@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Acdapp</string>
+
+    <!-- activity_sign_in strings -->
+    <string name="string_login_title">Accedi</string>
+    <string name="string_title_alternative_login">Oppure accedi con</string>
+    <string name="string_email_button">e-mail</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Autolettura</string>
+    <string name="title_notifications">Storico</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_activity_main2">AcdApp</string>
+
+
+</resources>

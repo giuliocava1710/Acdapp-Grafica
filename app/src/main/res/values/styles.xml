@@ -1,0 +1,12 @@
+<resources>
+    <!--  Qui nello style.xml vengono gestiti  i temi per la grafica dell'app  -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- Add attributes here -->
+    </style>
+
+    -->
+
+
+
+</resources>
