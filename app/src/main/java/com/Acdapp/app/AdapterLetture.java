@@ -29,7 +29,7 @@ public class AdapterLetture extends RecyclerView.Adapter<AdapterLetture.LettureV
         this.mCtx = mCtx;
         this.listaLetture = listaLetture;
 
-        for(Lettura lettura : listaLetture) Log.d("LETTURA", lettura.toString());
+        //for(Lettura lettura : listaLetture) Log.d("LETTURA", lettura.toString());
     }
 
     @NonNull

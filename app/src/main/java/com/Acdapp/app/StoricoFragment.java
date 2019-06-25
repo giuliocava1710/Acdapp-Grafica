@@ -1,6 +1,7 @@
 package com.Acdapp.app;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -25,11 +28,12 @@ import java.util.Objects;
 
 public class StoricoFragment extends Fragment {
 
-    private ArrayList<Lettura> listaLetture = null;
+    public ArrayList<Lettura> listaLetture;
 
     /*proprietà di nostro interesse*/
     private RecyclerView recyclerView ;
     private AdapterLetture adapterLetture;
+    private String codiceUser;
 
     @Nullable
     @Override
@@ -39,7 +43,7 @@ public class StoricoFragment extends Fragment {
         //like if the class is HomeFragment it should have R.layout.home_fragment
         //if it is DashboardFragment it should have R.layout.fragment_dashboard
 
-        View v = inflater.inflate(R.layout.lista_letture, container, false);
+        View v = inflater.inflate(R.layout.lista_letture, null, false);
 
 
         recyclerView = v.findViewById(R.id.lista_letture);
@@ -47,23 +51,32 @@ public class StoricoFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
+        codiceUser = FirebaseAuth.getInstance().getUid().toString();
+        Log.d("cod", codiceUser.toString());
 
-
+        /* Query  per ottenere le letture effettuate  di un determinato utente */
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        Query capitalCities = db.collection("Letture").whereEqualTo("codiceUser", Main2Activity.codiceUser);
-        capitalCities.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                listaLetture = new ArrayList<>();
-                List<DocumentSnapshot> query = Objects.requireNonNull(task.getResult()).getDocuments();
-                for (DocumentSnapshot document : query)
-                    listaLetture.add(new Lettura(document));
-            }
+        db.collection("Letture").whereEqualTo("codiceUser", codiceUser)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(!task.isSuccessful()) {
+                            Log.d("FAILURE","QUERY FAILURE");
+                        } else {
+                            listaLetture = new ArrayList<>();
+                            List<DocumentSnapshot> query = task.getResult().getDocuments();
+                            for (DocumentSnapshot document : query)
+                                listaLetture.add(new Lettura(document));
 
-        });
+                            adapterLetture = new AdapterLetture(getContext(), listaLetture);
+                            recyclerView.setAdapter(adapterLetture);
+                        }
+                    }
+                });
 
-        adapterLetture = new AdapterLetture(this.getContext(), listaLetture);
-        recyclerView.setAdapter(adapterLetture);
+        //for(Lettura lettura : listaLetture) Log.d("LETTURA", lettura.toString());
+
 
         return v;
     }
